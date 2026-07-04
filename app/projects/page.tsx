@@ -3,56 +3,61 @@ import Link from "next/link";
 const systems = [
   {
     title: "The Insight",
-    body: "Publication, interviews, student essays, research papers, podcast operations, editorial review, and expert outreach.",
+    body: "Student publishing, essays, research, interviews, editorial systems, and public-facing articles.",
   },
   {
     title: "InsightLRN",
-    body: "Flashcards, notes, library workflows, highlighted-text-to-card systems, spaced retrieval, and IB-aligned study routines.",
+    body: "Flashcards, notes, library tools, study workflows, and systems for building long-term academic retention.",
   },
   {
     title: "Insight Create",
-    body: "A creation layer for articles, podcasts, project pages, student media, and repeatable publishing templates.",
+    body: "Creative and technical infrastructure for media, product work, pages, launches, and reusable build systems.",
   },
   {
-    title: "Builder workflow",
-    body: "GitHub, Vercel, Codex implementation plans, project branches, issue lists, launch checklists, authentication, and database planning.",
+    title: "Articles and publishing",
+    body: "Writing pipelines, editorial review, distribution, archives, and structured publishing workflows.",
   },
   {
-    title: "Academic systems",
-    body: "IB Economics, Psychology, English, French, Physics, and Math systems: daily practice, syllabus mapping, and retrieval banks.",
+    title: "Podcasts and interviews",
+    body: "Guest research, outreach, recording flow, questions, production systems, and public conversation formats.",
   },
   {
-    title: "Research systems",
-    body: "Zotero, methodology packs, source maps, data-cleaning workflows, policy analysis, and economics model documentation.",
+    title: "Learning systems",
+    body: "Study architecture for IB work, retrieval practice, syllabus mapping, and durable note-taking.",
+  },
+  {
+    title: "Builder workflows",
+    body: "Codex, Git, Vercel, project planning, iteration loops, and execution systems behind the public-facing work.",
   },
 ];
 
 export default function ProjectsPage() {
   return (
-    <main className="page-shell">
-      <nav className="page-nav">
-        <Link href="/">← OS</Link>
-        <Link href="/about">About</Link>
-      </nav>
+    <main className="detailPageShell">
+      <div className="detailPanel">
+        <Link href="/" className="backLink">
+          ← Back to OS
+        </Link>
 
-      <section className="page-hero">
-        <p className="kicker">Toolkit</p>
-        <h1>Systems behind the work</h1>
-        <p>
-          This page is the expandable layer behind the homepage: the operating systems, workflows,
-          templates, and project infrastructure that support The Insight, InsightLRN, Insight Create,
-          school execution, and public work.
-        </p>
-      </section>
+        <header className="detailHeader">
+          <p className="detailEyebrow">Toolkit</p>
+          <h1>The systems behind the ecosystem.</h1>
+          <p className="detailLead">
+            This is the expanded layer behind the homepage launchpad: the products,
+            workflows, publishing structure, and operating systems that support The
+            Insight, InsightLRN, Insight Create, and Christian’s broader work.
+          </p>
+        </header>
 
-      <section className="project-stack">
-        {systems.map((system) => (
-          <article key={system.title}>
-            <h3>{system.title}</h3>
-            <p>{system.body}</p>
-          </article>
-        ))}
-      </section>
+        <section className="detailGrid">
+          {systems.map((system) => (
+            <article key={system.title} className="detailCard">
+              <h2>{system.title}</h2>
+              <p>{system.body}</p>
+            </article>
+          ))}
+        </section>
+      </div>
     </main>
   );
 }

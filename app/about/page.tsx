@@ -1,94 +1,51 @@
 import Link from "next/link";
 
-const profile = [
-  ["Name", "Christian Martin Hansen"],
-  ["Current frame", "IB student, founder of The Insight, and builder of education/media tools."],
-  ["Main platform", "The Insight — student essays, research papers, articles, interviews, and podcasts."],
-  ["Product direction", "InsightLRN and Insight Create: tools for learning, writing, publishing, and project execution."],
-];
-
-const projects = [
+const sections = [
+  {
+    title: "Christian Hansen",
+    body: "Christian Hansen is an IB student, founder of The Insight, and builder of learning and media tools designed to make serious student work public, durable, and usable.",
+  },
   {
     title: "The Insight",
-    body: "A student-led publication and podcast platform built to make serious student thinking visible. It combines essays, articles, research, expert interviews, and student voices into one public intellectual archive.",
+    body: "The Insight publishes student essays, research, articles, interviews, and conversations. It is the public publishing layer of the ecosystem.",
   },
   {
     title: "InsightLRN",
-    body: "A learning system for flashcards, notes, libraries, highlighted passages, and structured retrieval. The aim is to turn schoolwork into a durable knowledge system rather than scattered revision.",
+    body: "InsightLRN focuses on tools for learning: flashcards, notes, library systems, study workflows, and academic retrieval systems.",
   },
   {
     title: "Insight Create",
-    body: "A builder layer for turning ideas into polished outputs: articles, podcasts, research pages, media projects, and reusable publishing systems.",
-  },
-  {
-    title: "Research and economics",
-    body: "Current interests include policy design, negative externalities, data-centre emissions, green industrial policy, institutional incentives, and the economics of technological infrastructure.",
+    body: "Insight Create supports creative and project infrastructure: building pages, producing media, refining systems, and turning ideas into finished outputs.",
   },
 ];
 
 export default function AboutPage() {
   return (
-    <main className="page-shell">
-      <nav className="page-nav">
-        <Link href="/">← OS</Link>
-        <a href="https://www.instagram.com/christianhansen_7/" target="_blank" rel="noreferrer">
-          Instagram
-        </a>
-      </nav>
+    <main className="detailPageShell">
+      <div className="detailPanel">
+        <Link href="/" className="backLink">
+          ← Back to OS
+        </Link>
 
-      <section className="page-hero">
-        <p className="kicker">Full about page</p>
-        <h1>Christian Martin Hansen</h1>
-        <p>
-          I build platforms for student thinking, learning, publishing, and expert conversation. The
-          current center of that work is The Insight: a student-led publication and podcast platform
-          that treats school-level ambition as the beginning of serious public work, not as a side
-          activity.
-        </p>
-      </section>
+        <header className="detailHeader">
+          <p className="detailEyebrow">About</p>
+          <h1>Builder of student publishing, learning systems, and public work.</h1>
+          <p className="detailLead">
+            Christian works across student publishing, research, education technology,
+            interviews, podcasts, and academic systems. The goal is not a personal
+            portfolio. The goal is an ecosystem for writing, learning, and building.
+          </p>
+        </header>
 
-      <section className="profile-grid">
-        {profile.map(([label, value]) => (
-          <article key={label}>
-            <span>{label}</span>
-            <p>{value}</p>
-          </article>
-        ))}
-      </section>
-
-      <section className="page-section emphasis-section">
-        <p className="kicker">Operating thesis</p>
-        <h2>Build public intellectual infrastructure early.</h2>
-        <p>
-          The Insight is a publishing platform, but it is also a training system: editorial standards,
-          interview preparation, expert outreach, public writing, technical execution, and a growing
-          archive of student work. InsightLRN and Insight Create extend that same logic into learning
-          tools and creation workflows.
-        </p>
-      </section>
-
-      <section className="project-stack">
-        {projects.map((project) => (
-          <article key={project.title}>
-            <h3>{project.title}</h3>
-            <p>{project.body}</p>
-          </article>
-        ))}
-      </section>
-
-      <section className="page-section compact-section">
-        <p className="kicker">Contact</p>
-        <h2>For podcast guests, student publishing, university conversations, collaborations, and build projects.</h2>
-        <div className="cta-row">
-          <a href="mailto:27christianh@wab.edu">Email</a>
-          <a href="https://www.instagram.com/christianhansen_7/" target="_blank" rel="noreferrer">
-            Instagram
-          </a>
-          <a href="https://www.linkedin.com/in/REPLACE-WITH-YOUR-LINKEDIN-SLUG/" target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-        </div>
-      </section>
+        <section className="detailGrid">
+          {sections.map((section) => (
+            <article key={section.title} className="detailCard">
+              <h2>{section.title}</h2>
+              <p>{section.body}</p>
+            </article>
+          ))}
+        </section>
+      </div>
     </main>
   );
 }

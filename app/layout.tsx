@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Christian Hansen OS — The Insight",
   description:
-    "A personal operating-system homepage for Christian Hansen, The Insight, InsightLRN, Insight Create, writing, research, podcasts, and learning systems.",
+    "The personal operating-system homepage for Christian Hansen, The Insight, InsightLRN, Insight Create, articles, podcasts, research, and public links.",
 };
 
 export const viewport: Viewport = {
