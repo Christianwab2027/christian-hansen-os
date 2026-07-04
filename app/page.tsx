@@ -840,6 +840,8 @@ export default function Home() {
                   <span className="floatingCardTint" />
                   <div className="floatingCardCopy">
                     {card.meta ? <small>{card.meta}</small> : null}
+                    {card.kind === "video" ? <b className="floatingCardBadge">YouTube</b> : null}
+                    {card.kind === "podcast" ? <b className="floatingCardBadge">Latest episode</b> : null}
                     <strong>{card.title}</strong>
                     <p>{card.subtitle}</p>
                     <span>{card.caption}</span>
