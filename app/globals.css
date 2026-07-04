@@ -56,13 +56,13 @@ a {
 
 .osWallpaper {
   background:
-    radial-gradient(circle at 50% 22%, rgba(255, 255, 255, 0.6), transparent 0 26%),
-    radial-gradient(circle at 22% 28%, rgba(255, 255, 255, 0.44), transparent 0 18%),
-    radial-gradient(circle at 81% 30%, rgba(255, 255, 255, 0.42), transparent 0 16%),
-    radial-gradient(circle at 50% 76%, rgba(54, 90, 255, 0.88), transparent 0 24%),
-    radial-gradient(circle at 50% 100%, rgba(2, 4, 9, 0.98), transparent 0 38%),
-    linear-gradient(180deg, #8f96a6 0%, #77809a 24%, #3556d3 58%, #04070f 100%);
-  filter: blur(28px) saturate(1.1);
+    radial-gradient(circle at 50% 21%, rgba(255, 255, 255, 0.82), transparent 0 27%),
+    radial-gradient(circle at 18% 32%, rgba(255, 255, 255, 0.48), transparent 0 20%),
+    radial-gradient(circle at 82% 34%, rgba(255, 255, 255, 0.46), transparent 0 20%),
+    radial-gradient(circle at 49% 74%, rgba(73, 108, 255, 0.96), transparent 0 26%),
+    radial-gradient(circle at 50% 100%, rgba(2, 4, 9, 1), transparent 0 42%),
+    linear-gradient(180deg, #9ba1ad 0%, #858da2 20%, #4564dd 56%, #05070f 100%);
+  filter: blur(34px) saturate(1.12);
   transform: scale(1.12);
 }
 
@@ -73,8 +73,8 @@ a {
 }
 
 .osNoise {
-  opacity: 0.28;
-  mix-blend-mode: soft-light;
+  opacity: 0.68;
+  mix-blend-mode: screen;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.88'/%3E%3C/svg%3E");
 }
 
@@ -163,14 +163,14 @@ a {
 }
 
 .desktopScene {
-  padding: 36px 42px 120px;
+  padding: 34px 42px 126px;
 }
 
 .desktopIntro {
   position: relative;
   z-index: 1;
   width: min(860px, 100%);
-  margin: 10vh auto 0;
+  margin: 14vh auto 0;
   text-align: center;
 }
 
@@ -192,19 +192,19 @@ a {
 
 .desktopIntro span {
   display: block;
-  margin-top: 34px;
-  color: rgba(255, 255, 255, 0.14);
-  font-size: 0.9rem;
-  letter-spacing: 0.22em;
+  margin-top: 38px;
+  color: rgba(255, 255, 255, 0.18);
+  font-size: 0.86rem;
+  letter-spacing: 0.26em;
 }
 
 .desktopRail {
   position: absolute;
-  top: 24%;
-  right: 48px;
+  top: 19%;
+  right: 36px;
   z-index: 2;
   display: grid;
-  gap: 26px;
+  gap: 24px;
 }
 
 .desktopApp {
@@ -221,29 +221,99 @@ a {
 .desktopAppIcon {
   width: 78px;
   height: 78px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
-    rgba(0, 0, 0, 0.74);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02)),
+    rgba(8, 10, 18, 0.74);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 16px 34px rgba(0, 0, 0, 0.28);
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -12px 22px rgba(0, 0, 0, 0.22),
+    0 18px 34px rgba(0, 0, 0, 0.28);
   display: grid;
   place-items: center;
-  font-size: 1.25rem;
-  font-weight: 680;
-  letter-spacing: -0.05em;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .desktopAppLabel {
   max-width: 96px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
   line-height: 1.25;
   text-align: center;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.desktopAppArtwork {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -10px 22px rgba(0, 0, 0, 0.2);
+}
+
+.desktopAppArtworkGlass {
+  position: absolute;
+  inset: 7px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.04));
+  opacity: 0.75;
+}
+
+.desktopAppArtworkMark {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-size: 1rem;
+  font-weight: 780;
+  letter-spacing: -0.06em;
+}
+
+.desktopAppArtwork-insight {
+  background:
+    linear-gradient(135deg, rgba(255, 98, 72, 0.95), rgba(29, 33, 44, 0.1) 36%),
+    linear-gradient(90deg, rgba(78, 227, 102, 0.94), rgba(221, 193, 54, 0.96));
+}
+
+.desktopAppArtwork-lrn {
+  background:
+    linear-gradient(180deg, rgba(241, 244, 255, 0.98), rgba(214, 221, 244, 0.9)),
+    radial-gradient(circle at 70% 34%, rgba(255, 196, 55, 0.92), transparent 20%),
+    radial-gradient(circle at 30% 64%, rgba(73, 133, 255, 0.94), transparent 26%);
+}
+
+.desktopAppArtwork-lrn .desktopAppArtworkMark,
+.desktopAppArtwork-articles .desktopAppArtworkMark {
+  color: #0d1324;
+}
+
+.desktopAppArtwork-articles {
+  background:
+    linear-gradient(160deg, rgba(243, 246, 255, 0.96), rgba(214, 220, 238, 0.92)),
+    linear-gradient(90deg, rgba(12, 13, 18, 0.9), rgba(255, 255, 255, 0.15));
+}
+
+.desktopAppArtwork-create {
+  background:
+    linear-gradient(135deg, rgba(255, 145, 48, 0.92), rgba(65, 23, 8, 0.26)),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.22), rgba(255, 212, 77, 0.56));
+}
+
+.desktopAppArtwork-about {
+  background: linear-gradient(180deg, #f4f1de, #d0cab8);
+}
+
+.desktopAppArtwork-about .desktopAppArtworkMark {
+  color: #141414;
+}
+
+.desktopAppArtwork-toolkit {
+  background: linear-gradient(180deg, #395eff, #162faf);
 }
 
 .desktopApp:hover .desktopAppIcon,
@@ -256,106 +326,191 @@ a {
 
 .floatingDeck {
   position: absolute;
-  inset: auto 0 102px;
+  left: 0;
+  right: 0;
+  bottom: 106px;
   z-index: 0;
-  height: 360px;
+  height: 390px;
+  overflow: hidden;
   pointer-events: none;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.floatingTrack {
+  display: flex;
+  align-items: flex-end;
+  gap: 48px;
+  width: max-content;
+  padding-left: 8vw;
+  animation: floatingTrackScroll 12s linear infinite;
+}
+
+@keyframes floatingTrackScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .floatingCard {
-  position: absolute;
+  position: relative;
   display: grid;
   align-content: end;
-  min-width: 220px;
+  flex: 0 0 330px;
+  min-width: 330px;
   aspect-ratio: 1.52;
-  padding: 18px;
+  padding: 14px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  background: rgba(20, 21, 26, 0.82);
-  box-shadow: 0 20px 34px rgba(0, 0, 0, 0.28);
+  border-radius: 14px;
+  background: rgba(18, 19, 24, 0.9);
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.34);
   overflow: hidden;
   pointer-events: auto;
+  transform: rotate(var(--card-rotate, 0deg));
 }
 
 .floatingCard::before {
   content: "";
   position: absolute;
-  inset: 8px 8px 44px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.04);
+  inset: 8px 8px 54px;
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 18%),
+    rgba(255, 255, 255, 0.02);
 }
 
 .floatingCardScreen {
   position: absolute;
-  inset: 8px 8px 44px;
-  border-radius: 4px;
+  inset: 8px 8px 54px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
 }
 
+.floatingCardTint {
+  position: absolute;
+  inset: 8px 8px 54px;
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.12)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16));
+}
+
+.floatingCardCopy,
 .floatingCard strong,
-.floatingCard p {
+.floatingCard p,
+.floatingCard span {
   position: relative;
   z-index: 1;
 }
 
+.floatingCardCopy {
+  display: grid;
+  gap: 8px;
+}
+
+.floatingCardCopy small {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
 .floatingCard strong {
-  font-size: clamp(1.6rem, 2.4vw, 2.5rem);
-  line-height: 0.96;
+  font-size: clamp(1.4rem, 2vw, 2.15rem);
+  line-height: 0.92;
   letter-spacing: -0.05em;
 }
 
 .floatingCard p {
-  margin: 10px 0 0;
-  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.96rem;
+  font-weight: 700;
+}
+
+.floatingCardCopy span {
+  color: rgba(255, 255, 255, 0.84);
   font-size: 0.86rem;
+  line-height: 1.3;
 }
 
 .floatingCard-insight .floatingCardScreen {
   background:
-    linear-gradient(135deg, rgba(255, 68, 68, 0.82), rgba(19, 23, 34, 0.34) 38%),
-    linear-gradient(90deg, rgba(0, 255, 120, 0.86), rgba(255, 215, 40, 0.92));
+    radial-gradient(circle at 18% 92%, rgba(255, 52, 52, 0.96), transparent 30%),
+    radial-gradient(circle at 85% 16%, rgba(255, 209, 66, 0.98), transparent 16%),
+    linear-gradient(120deg, rgba(8, 9, 14, 0.96) 0 28%, rgba(27, 33, 44, 0.64) 29%),
+    linear-gradient(90deg, rgba(10, 218, 86, 0.92), rgba(61, 252, 61, 0.36));
 }
 
 .floatingCard-lrn .floatingCardScreen {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.55)),
-    radial-gradient(circle at 30% 62%, rgba(58, 121, 255, 0.92), transparent 28%),
-    radial-gradient(circle at 64% 38%, rgba(255, 188, 39, 0.94), transparent 20%);
+    linear-gradient(135deg, rgba(246, 248, 253, 0.98), rgba(228, 233, 248, 0.92)),
+    radial-gradient(circle at 26% 76%, rgba(56, 176, 255, 0.86), transparent 20%),
+    radial-gradient(circle at 58% 28%, rgba(255, 86, 86, 0.82), transparent 16%),
+    radial-gradient(circle at 82% 62%, rgba(255, 203, 52, 0.92), transparent 18%);
 }
 
 .floatingCard-podcast .floatingCardScreen {
   background:
-    linear-gradient(135deg, rgba(10, 12, 17, 0.92), rgba(21, 25, 34, 0.5)),
-    radial-gradient(circle at 72% 30%, rgba(255, 60, 60, 0.72), transparent 18%),
-    radial-gradient(circle at 26% 66%, rgba(255, 255, 255, 0.14), transparent 22%);
+    linear-gradient(135deg, rgba(14, 14, 17, 0.98), rgba(26, 27, 34, 0.78)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.12)),
+    radial-gradient(circle at 72% 34%, rgba(255, 60, 60, 0.86), transparent 18%);
 }
 
 .floatingCard-research .floatingCardScreen {
   background:
-    linear-gradient(135deg, rgba(240, 243, 251, 0.98), rgba(213, 219, 240, 0.92)),
+    linear-gradient(135deg, rgba(241, 243, 250, 0.98), rgba(220, 224, 239, 0.92)),
+    radial-gradient(circle at 14% 40%, rgba(12, 14, 18, 0.94), transparent 18%),
     linear-gradient(90deg, rgba(0, 0, 0, 0.86), rgba(255, 255, 255, 0.1));
 }
 
 .floatingCard-build .floatingCardScreen {
   background:
-    linear-gradient(135deg, rgba(255, 132, 48, 0.84), rgba(46, 12, 8, 0.42)),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(255, 210, 56, 0.56));
+    linear-gradient(135deg, rgba(255, 154, 52, 0.92), rgba(79, 13, 8, 0.42)),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.42), rgba(255, 210, 56, 0.42));
+}
+
+.floatingCard-artwork .floatingCardScreen {
+  background:
+    radial-gradient(circle at 24% 28%, rgba(255, 208, 99, 0.84), transparent 20%),
+    radial-gradient(circle at 72% 62%, rgba(78, 142, 255, 0.92), transparent 26%),
+    linear-gradient(135deg, rgba(19, 23, 37, 0.98), rgba(35, 37, 56, 0.72)),
+    linear-gradient(45deg, rgba(255, 84, 104, 0.72), rgba(85, 103, 255, 0.4));
+}
+
+.floatingCard-academic .floatingCardScreen,
+.floatingCard-track .floatingCardScreen {
+  background-color: #111319;
+}
+
+.floatingCard-podcast .floatingCardTint,
+.floatingCard-academic .floatingCardTint,
+.floatingCard-track .floatingCardTint {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.58)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.08));
 }
 
 .desktopDock {
   position: fixed;
   left: 50%;
-  bottom: 18px;
+  bottom: 20px;
   z-index: 30;
   transform: translateX(-50%);
   display: flex;
   align-items: flex-end;
-  gap: 8px;
-  padding: 10px 12px;
+  gap: 10px;
+  padding: 11px 14px;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 22px;
+  border-radius: 24px;
   background:
-    linear-gradient(180deg, rgba(44, 46, 56, 0.84), rgba(17, 18, 25, 0.88)),
-    rgba(18, 18, 24, 0.74);
+    linear-gradient(180deg, rgba(46, 48, 59, 0.88), rgba(19, 20, 28, 0.92)),
+    rgba(18, 18, 24, 0.78);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.12),
     0 22px 40px rgba(0, 0, 0, 0.38);
@@ -363,85 +518,101 @@ a {
 }
 
 .dockItem {
-  width: 58px;
-  height: 58px;
+  width: 62px;
+  height: 62px;
   border: 0;
-  border-radius: 18px;
+  border-radius: 20px;
   display: grid;
   place-items: center;
   padding: 0;
   color: white;
   cursor: pointer;
-  transition: transform 180ms ease, filter 180ms ease;
+  transition: transform 180ms ease, filter 180ms ease, margin 180ms ease;
 }
 
-.dockItem span {
-  font-size: 1.3rem;
-  font-weight: 700;
+.dockItem svg,
+.dockItem .monogramIcon {
+  width: 26px;
+  height: 26px;
+}
+
+.monogramIcon {
+  display: inline-grid;
+  place-items: center;
+  font-size: 1.15rem;
+  font-weight: 760;
   letter-spacing: -0.06em;
 }
 
-.dockItem:nth-child(1) {
+.dockItem-about {
   background: linear-gradient(180deg, #f4f1de, #d0cab8);
   color: #171717;
 }
 
-.dockItem:nth-child(2) {
+.dockItem-youtube {
   background: linear-gradient(180deg, #ff2538, #b60016);
 }
 
-.dockItem:nth-child(3) {
-  background: linear-gradient(180deg, #3a66ff, #1737c4);
-}
-
-.dockItem:nth-child(4) {
+.dockItem-podcasts {
   background: linear-gradient(180deg, #15161d, #090a10);
 }
 
-.dockItem:nth-child(5) {
+.dockItem-email {
   background: linear-gradient(180deg, #6ac2ff, #327eff);
 }
 
-.dockItem:nth-child(6) {
-  background: linear-gradient(180deg, #ff5f92, #c12259);
+.dockItem-instagram {
+  background:
+    radial-gradient(circle at 30% 110%, #feda75 0 18%, transparent 19%),
+    linear-gradient(145deg, #f58529, #dd2a7b 48%, #8134af 72%, #515bd4);
 }
 
-.dockItem:nth-child(7) {
+.dockItem-linkedin {
   background: linear-gradient(180deg, #232631, #101116);
 }
 
 .dockItem:hover,
 .dockItem:focus-visible {
-  transform: translateY(-10px) scale(1.06);
+  transform: translateY(-12px) scale(1.1);
   filter: brightness(1.05);
 }
 
 .desktopWindows {
-  position: absolute;
-  inset: 18vh 0 auto;
+  position: fixed;
+  inset: 0;
   z-index: 10;
-  display: grid;
-  place-items: center;
   pointer-events: none;
 }
 
 .desktopWindow {
-  position: absolute;
-  width: min(880px, calc(100vw - 180px));
+  position: fixed;
   max-height: 74vh;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
-  background: rgba(20, 21, 28, 0.96);
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.42);
+  background:
+    linear-gradient(180deg, rgba(31, 33, 42, 0.98), rgba(18, 19, 28, 0.96)),
+    rgba(20, 21, 28, 0.96);
+  box-shadow:
+    0 34px 70px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
   overflow: hidden;
   pointer-events: auto;
+  user-select: none;
+}
+
+.desktopWindow[data-front="true"] {
+  box-shadow:
+    0 40px 86px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .windowBar {
   position: relative;
   height: 58px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(28, 29, 36, 0.98);
+  background:
+    linear-gradient(180deg, rgba(60, 64, 78, 0.5), rgba(24, 26, 34, 0)),
+    rgba(28, 29, 36, 0.98);
 }
 
 .trafficLights {
@@ -481,6 +652,16 @@ a {
   place-items: center;
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.92rem;
+}
+
+.windowDragHandle {
+  position: absolute;
+  inset: 0 110px 0 72px;
+  cursor: grab;
+}
+
+.windowDragHandle:active {
+  cursor: grabbing;
 }
 
 .windowContent {
@@ -583,6 +764,7 @@ a {
   min-height: 100%;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(12, 13, 18, 0.62);
+  border-radius: 18px;
 }
 
 .windowChecklist {
@@ -732,12 +914,9 @@ a {
 }
 
 @media (max-width: 1100px) {
-  .desktopWindow {
-    width: min(820px, calc(100vw - 96px));
-  }
-
   .floatingCard {
-    min-width: 190px;
+    min-width: 280px;
+    flex-basis: 280px;
   }
 }
 
@@ -764,22 +943,20 @@ a {
 
   .floatingDeck {
     position: relative;
-    inset: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
     height: auto;
     margin-top: 34px;
     padding-bottom: 24px;
-    display: flex;
-    gap: 14px;
     overflow-x: auto;
+    mask-image: none;
   }
 
-  .floatingCard {
-    position: relative;
-    left: auto !important;
-    bottom: auto !important;
-    width: min(280px, 72vw) !important;
-    transform: rotate(0deg) !important;
-    flex: 0 0 auto;
+  .floatingTrack {
+    padding-left: 0;
+    gap: 14px;
+    animation: none;
   }
 
   .desktopWindows {
@@ -793,8 +970,9 @@ a {
     position: relative;
     width: 100%;
     max-height: none;
-    transform: none !important;
     margin-top: 16px;
+    left: auto !important;
+    top: auto !important;
   }
 
   .windowContent {
