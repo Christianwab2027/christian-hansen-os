@@ -1,62 +1,70 @@
 import Link from "next/link";
 
-const systems = [
-  {
-    title: "The Insight",
-    body: "Student publishing, essays, research, interviews, editorial systems, and public-facing articles.",
-  },
-  {
-    title: "InsightLRN",
-    body: "Flashcards, notes, library tools, study workflows, and systems for building long-term academic retention.",
-  },
-  {
-    title: "Insight Create",
-    body: "Creative and technical infrastructure for media, product work, pages, launches, and reusable build systems.",
-  },
-  {
-    title: "Articles and publishing",
-    body: "Writing pipelines, editorial review, distribution, archives, and structured publishing workflows.",
-  },
-  {
-    title: "Podcasts and interviews",
-    body: "Guest research, outreach, recording flow, questions, production systems, and public conversation formats.",
-  },
-  {
-    title: "Learning systems",
-    body: "Study architecture for IB work, retrieval practice, syllabus mapping, and durable note-taking.",
-  },
-  {
-    title: "Builder workflows",
-    body: "Codex, Git, Vercel, project planning, iteration loops, and execution systems behind the public-facing work.",
-  },
+const overviewPoints = [
+  "Publishing systems tuned for student work and long-form output.",
+  "Learning workflows that combine flashcards, notes, and review cycles.",
+  "Creative execution for pages, launch content, and product infrastructure.",
+  "Operational workflows built for speed, clarity, and reuse.",
+];
+
+const stats = [
+  { label: "Role", value: "Systems stack" },
+  { label: "Live", value: "Yes" },
+  { label: "Scope", value: "Publishing + learning" },
 ];
 
 export default function ProjectsPage() {
   return (
-    <main className="detailPageShell">
-      <div className="detailPanel">
-        <Link href="/" className="backLink">
+    <main className="detailPageShell detailPageShell-expanded">
+      <div className="detailWindow">
+        <Link href="/" className="backLink detailBackLink">
           ← Back to OS
         </Link>
+        <div className="detailWindowBody">
+          <section className="detailWindowMain">
+            <p className="detailCaption">TOOLKIT</p>
+            <h1>The systems behind the ecosystem.</h1>
+            <p className="detailLead">
+              A live operations layer for The Insight, InsightLRN, Insight Create, and related publishing work.
+              These are the tools, workflows, and execution systems that keep the ecosystem moving.
+            </p>
 
-        <header className="detailHeader">
-          <p className="detailEyebrow">Toolkit</p>
-          <h1>The systems behind the ecosystem.</h1>
-          <p className="detailLead">
-            This is the expanded layer behind the homepage launchpad: the products,
-            workflows, publishing structure, and operating systems that support The
-            Insight, InsightLRN, Insight Create, and Christian’s broader work.
+            <div className="detailStats">
+              {stats.map((stat) => (
+                <div key={stat.label} className="detailStatItem">
+                  <span>{stat.label}</span>
+                  <strong>{stat.value}</strong>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <aside className="detailSidebar">
+            <div className="overviewHeader">
+              <span>OVERVIEW</span>
+              <span>ACTIVE</span>
+            </div>
+            <ul className="overviewList">
+              {overviewPoints.map((point) => (
+                <li key={point} className="overviewListItem">
+                  <span className="overviewBullet" />
+                  <p>{point}</p>
+                </li>
+              ))}
+            </ul>
+            <div className="overviewFooter">Systems, publishing, and learning workflows active across the ecosystem.</div>
+          </aside>
+        </div>
+
+        <div className="detailWindowFooter">
+          <p>
+            This layer intentionally blends product systems, editorial workflows, and learning infrastructure.
+            Everything is built to support launches, student work, and repeatable publishing operations.
           </p>
-        </header>
-
-        <section className="detailGrid">
-          {systems.map((system) => (
-            <article key={system.title} className="detailCard">
-              <h2>{system.title}</h2>
-              <p>{system.body}</p>
-            </article>
-          ))}
-        </section>
+          <a href="/" className="detailActionButton">
+            Return to OS
+          </a>
+        </div>
       </div>
     </main>
   );
